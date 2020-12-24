@@ -88,7 +88,6 @@ class Table():
         ##assert(self.table_name is not None)
         ##assert(self.columns is not None)
 
-
     @staticmethod
     def query_list_all(function_):
         def wrapper(table: Table, *args, **kwargs):

@@ -1,0 +1,28 @@
+<div class="modal" id="modalCreate" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="/create" method="POST">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Entry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% for column in columns %}
+                        <label>{{ column.name }}</label>
+                        <input type="text" class="form-control" name="{{ column.name }}" placeholder="">
+                        {% if column.name == "id" %}
+                            <small class="form-text text-muted">* Required</small>
+                        {% endif %}
+                        <br>
+                    {% endfor %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
